@@ -1,19 +1,30 @@
 import "./styles.css";
-import { menu } from "./menu.js";
-import k from "./img/kirby.png";
+import { loadHome } from "./modules/home.js";
+import { loadMenu } from "./modules/menu.js";
+import { loadContact } from "./modules/contact.js";
 
 
-const a = document.createElement("div");
-a.innerHTML =
-    `<h1>AAWWWwww</h1>
-    <p>🥰🥰 </p> `;
+const content = document.querySelector("#content");
 
-document.body.appendChild(a);
+function clearContent() {
+    content.textContent = "";
+}
 
-console.log(`${menu}🥰`);
+function switchTab(loadPage) {
+    clearContent();
+    loadPage();
+}
 
+document.querySelector("#home-button").addEventListener("click", () => {
+    switchTab(loadHome);
+});
 
-const image = document.createElement("img");
-image.src = k;
+document.querySelector("#menu-button").addEventListener("click", () => {
+    switchTab(loadMenu);
+});
 
-document.body.appendChild(image);
+document.querySelector("#contact-button").addEventListener("click", () => {
+    switchTab(loadContact);
+});
+
+loadHome();
