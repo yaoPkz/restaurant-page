@@ -1,6 +1,108 @@
-body {
-    background-color: rebeccapurple;
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Kirby Pink */
+    --kirby-pink: #ff6fae;
+    --kirby-pink-light: #ffb3d1;
+    --kirby-pink-soft: #ffe4ef;
+    --kirby-pink-dark: #e94f91;
+    --kirby-green: #78CFA3;
+    --kirby-green-light: #B8E8CB;
+    --kirby-green-dark: #4FA878;
+
+    /* Kirby's Feet / Warm Accent */
+    --kirby-red: #e83f4f;
+    --kirby-red-dark: #c92f3f;
+
+    /* Star / Food Accent */
+    --star-yellow: #ffd84d;
+    --star-yellow-light: #fff1a8;
+    --star-orange: #ffad42;
+
+    /* Cream / Background */
+    --cream: #fff9ef;
+    --cream-dark: #f8ead5;
+
+    /* Sky / Dream Land */
+    --sky-blue: #8ed8ff;
+    --sky-blue-light: #dff5ff;
+    --sky-blue-dark: #4eb8e8;
+
+    /* Text */
+    --text-dark: #633d52;
+    --text-muted: #987080;
+    --white: #ffffff;
+
+    /* Restaurant UI */
+    --primary: var(--kirby-pink);
+    --primary-hover: var(--kirby-pink-dark);
+    --secondary: var(--star-yellow);
+    --accent: var(--kirby-red);
+
+    --background: var(--cream);
+    --surface: var(--white);
+    --surface-pink: var(--kirby-pink-soft);
+
+    --border: #f5b6ce;
+    --shadow: rgba(99, 61, 82, 0.15);
+
+}
+
+
+body {
+    background-color: var(--kirby-pink-light);
+}
+
+.chef {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 20px;
+    height: 20%;
+    width: auto;
+    border-radius: 20%;
+
+}
+
+header {
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: var(--kirby-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav button {
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    margin: 0px 20px;
+    height: 40px;
+    width: 80px;
+    background-color: var(--text-dark);
+    color: white;
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--text-muted);
+}
+
+
+
 
 .main {
     width: 100%;
@@ -14,6 +116,56 @@ body {
 #content {
     width: 80%;
     height: 100%;
-    border: solid 1px black;
-    background-color: aqua;
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 5px var(--text-dark);
+    background-color: var(--star-yellow-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#content img {
+    border-radius: 20px;
+}
+
+#content p {
+    margin: 10px 50px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 5px solid var(--text-dark);
+}
+
+.happy {
+    position: fixed;
+    z-index: 9999;
+    top: 200px;
+    right: auto;
+    height: 450px;
+    width: auto;
+}
+
+
+/* menu*/
+
+.food-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+
+}
+
+.food-card {
+    display: flex;
+}
+
+.food-card img {
+    height: 300px;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.food-card h3 {
+    color: var(--kirby-red);
+    margin-left: 50px;
 }

@@ -6,6 +6,10 @@ import { loadContact } from "./modules/contact.js";
 
 const content = document.querySelector("#content");
 
+const homeBtn = document.querySelector("#home-button");
+const menuBtn = document.querySelector("#menu-button");
+const contactBtn = document.querySelector("#contact-button");
+
 function clearContent() {
     content.textContent = "";
 }
@@ -15,16 +19,44 @@ function switchTab(loadPage) {
     loadPage();
 }
 
-document.querySelector("#home-button").addEventListener("click", () => {
+function setActive(button) {
+    homeBtn.classList.remove("active");
+    homeBtn.textContent = `Home`;
+    menuBtn.classList.remove("active");
+    menuBtn.textContent = `Menu`;
+    contactBtn.classList.remove("active");
+    contactBtn.textContent = `About`;
+
+    button.classList.add("active");
+    button.textContent = `⭐️${button.textContent}`;
+}
+
+
+
+homeBtn.addEventListener("click", () => {
+    setActive(homeBtn);
     switchTab(loadHome);
+
 });
 
-document.querySelector("#menu-button").addEventListener("click", () => {
+
+
+menuBtn.addEventListener("click", () => {
+    setActive(menuBtn);
     switchTab(loadMenu);
+
 });
 
-document.querySelector("#contact-button").addEventListener("click", () => {
+
+
+contactBtn.addEventListener("click", () => {
+    setActive(contactBtn);
     switchTab(loadContact);
+
 });
+
+
+
 
 loadHome();
+
