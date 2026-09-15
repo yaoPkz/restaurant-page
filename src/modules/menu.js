@@ -36,6 +36,9 @@ const food = [
 function loadMenu() {
     const content = document.querySelector("#content");
     const menuContent = document.createElement("div");
+    const chefImg = document.querySelector(".chef");
+
+    chefImg.classList.remove("invisible");
 
     menuContent.innerHTML = `
         <h1>Waddle Dee Cafe</h1>

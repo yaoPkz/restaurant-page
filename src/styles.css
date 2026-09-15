@@ -169,3 +169,101 @@ nav button {
     color: var(--kirby-red);
     margin-left: 50px;
 }
+
+/* contact*/
+
+.contact {
+    display: flex;
+    align-items: center;
+
+    gap: 100px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 350px;
+    padding: 25px;
+
+    border-radius: 12px;
+    background-color: #633d52;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+    box-sizing: border-box;
+}
+
+form label {
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #fff5fa;
+    color: #333;
+
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+form input {
+    height: 40px;
+}
+
+form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* When you click inside an input */
+form input:focus,
+form textarea:focus {
+    outline: 3px solid #f4a6c8;
+}
+
+/* Send button */
+form button {
+    margin-top: 10px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #f4a6c8;
+    color: #633d52;
+
+    font-weight: bold;
+    font-size: 16px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background-color: #ffcae1;
+    transform: translateY(-2px);
+}
+
+form button:active {
+    transform: translateY(0);
+}
+
+.waiter {
+    height: 200px;
+    width: auto;
+}
+
+.invisible {
+    display: none;
+}
